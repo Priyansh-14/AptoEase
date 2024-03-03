@@ -1,0 +1,2 @@
+# AptoEase
+Wallet for Aptos
