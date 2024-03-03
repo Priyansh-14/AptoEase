@@ -8,7 +8,8 @@
 }
 
 body {
-  background: linear-gradient(110deg, #016a70, #a2c579) !important;
+  /* background: linear-gradient(110deg, #016a70, #a2c579) !important; */
+  background: linear-gradient(110deg, #343434, #bcbcbc) !important;
   overflow-x: hidden;
 }
 .loader-container {
@@ -160,7 +161,8 @@ li {
 /* Navbar styles */
 .navbar.navbar-light.bg-light {
   /* background-color: #016A70 !important; */
-  background: linear-gradient(110deg, #016a70, #a2c579) !important;
+  /* background: linear-gradient(110deg, #016a70, #a2c579) !important; */
+  background: linear-gradient(110deg, #343434, #bcbcbc) !important;
 }
 .navbar.navbar-light.bg-light .navbar-nav .nav-link,
 .navbar.navbar-light.bg-light .navbar-brand {
@@ -329,7 +331,8 @@ li {
 }
 /* cards section */
 .card {
-  background-color: #485c317b !important;
+  /* background-color: #0000004b !important; */
+  background: linear-gradient(110deg, #343434, #bcbcbc) !important;
   color: #ffffdd !important;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   margin-bottom: 10em;
@@ -452,7 +455,8 @@ section#welcome:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(110deg, #016a70, #a2c579);
+  /* background: linear-gradient(110deg, #016a70, #a2c579); */
+  background: linear-gradient(110deg, #343434, #bcbcbc) !important;
   border-radius: 0 0 50% 50% / 0 0 100% 100%;
   transform: scaleX(2);
 }
@@ -504,7 +508,8 @@ section#welcome:before {
   font-weight: 600;
   border: none;
   cursor: pointer;
-  background: linear-gradient(110deg, #016a70, #a2c579);
+  /* background: linear-gradient(110deg, #016a70, #a2c579); */
+  background: linear-gradient(110deg, #343434, #bcbcbc) !important;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
@@ -516,7 +521,8 @@ section#welcome:before {
   bottom: 0;
   width: 100%;
   height: 5px;
-  background: linear-gradient(110deg, #016a70, #a2c579);
+  /* background: linear-gradient(110deg, #016a70, #a2c579); */
+  background: linear-gradient(110deg, #343434, #bcbcbc) !important;
   z-index: -1;
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -547,7 +553,8 @@ section#welcome:before {
 .footer {
   line-height: 1.5;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(110deg, #143d3f, #81a156);
+  /* background: linear-gradient(110deg, #143d3f, #81a156); */
+  background: linear-gradient(110deg, #343434, #bcbcbc) !important;
   padding: 20px 0;
 }
 
