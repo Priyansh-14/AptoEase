@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Page</title>
+
+    <link rel="stylesheet" href="css/form.css" />
+  </head>
+  <body>
+    <div class="alert-box">
+      <p class="alert"></p>
+    </div>
+
+    <form id="reg-form" class="form" method="POST">
+      <h1 class="heading">Register</h1>
+      <input
+        id="username"
+        type="text"
+        name="username"
+        placeholder="Username"
+        autocomplete="off"
+        class="name"
+        required
+      />
+      <input
+        id="email"
+        style="text-transform: lowercase"
+        type="email"
+        name="email"
+        placeholder="email"
+        autocomplete="off"
+        class="email"
+        required
+      />
+      <input
+        id="password"
+        type="password"
+        name="password"
+        placeholder="password"
+        autocomplete="off"
+        class="password"
+        required
+      />
+      <button type="submit" class="submit-btn">register</button>
+      <button class="home-btn">Back To Home</button>
+      <a href="login.html" class="link"
+        >already have an account ? log in here</a
+      >
+    </form>
+
+    <script src="js/RegisterForm.js"></script>
+  </body>
+</html>

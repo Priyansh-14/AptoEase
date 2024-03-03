@@ -1,0 +1,126 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/* Global reset and styling */
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  outline: none; /* Remove outline on focus */
+}
+
+/* Body styling with gradient animation */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #4c5a1a, #a2c579, #016a70, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  height: 100vh;
+}
+
+/* Gradient animation keyframes */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Form styling */
+.form {
+  width: 400px;
+  height: auto;
+  color: #fff;
+  font-family: "roboto", sans-serif;
+  text-align: center;
+}
+
+/* Heading styling */
+.heading {
+  opacity: 0;
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 60px;
+  font-weight: 300;
+  margin-bottom: 50px;
+}
+
+/* Input, buttons, and links styling */
+input,
+.submit-btn,
+.home-btn {
+  opacity: 0;
+  width: 80%;
+  height: 35px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  color: #fff;
+  padding: 15px;
+  transition: 0.5s;
+  text-transform: capitalize;
+}
+
+/* Input placeholder styling */
+input::placeholder {
+  color: #fff;
+}
+
+/* Input and button focus/hover styling */
+input:focus,
+.submit-btn:hover,
+.home-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Button styling */
+.submit-btn,
+.home-btn {
+  margin: 50px;
+  display: inline-block;
+  width: auto;
+  padding: 0 20px;
+  cursor: pointer;
+  margin: 20px 5px 0;
+  opacity: 0;
+}
+
+/* Input placeholder focus styling */
+input:focus::placeholder {
+  color: #000;
+  font-weight: 600;
+}
+
+/* Button hover and alert box styling */
+.submit-btn:hover,
+.home-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 17px rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+}
+
+/* Link styling */
+.link {
+  opacity: 0;
+  text-align: center;
+  text-transform: capitalize;
+  color: rgba(255, 255, 255, 0.5);
+  display: block;
+  margin: 30px auto;
+  text-decoration: none;
+}
+
+/* Link hover styling */
+.link:hover {
+  color: #fff;
+}

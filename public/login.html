@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+
+    <link rel="stylesheet" href="css/form.css" />
+  </head>
+  <body>
+    <div class="alert-box">
+      <p class="alert"></p>
+    </div>
+
+    <form id="login" class="form" method="POST">
+      <h1 class="heading">login</h1>
+      <input
+        id="username"
+        type="username"
+        name="username"
+        placeholder="Username"
+        autocomplete="off"
+        class="username"
+        required
+      />
+      <input
+        id="password"
+        type="password"
+        name="password"
+        placeholder="password"
+        autocomplete="off"
+        class="password"
+        required
+      />
+      <button type="submit" class="submit-btn">log in</button>
+      <button class="home-btn">Back to Home</button>
+      <a href="register.html" class="link"
+        >don't have an account? Register one</a
+      >
+    </form>
+
+    <script src="js/LoginForm.js"></script>
+  </body>
+</html>
