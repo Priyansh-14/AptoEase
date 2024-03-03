@@ -8,7 +8,8 @@
 }
 
 body {
-  background: linear-gradient(110deg, #016a70, #a2c579) !important;
+background: linear-gradient(110deg, #140b15, #4a044a);
+
   overflow-x: hidden;
 }
 .loader-container {
@@ -160,7 +161,7 @@ li {
 /* Navbar styles */
 .navbar.navbar-light.bg-light {
   /* background-color: #016A70 !important; */
-  background: linear-gradient(110deg, #016a70, #a2c579) !important;
+  background: linear-gradient(110deg, #140b15, #4a044a);
 }
 .navbar.navbar-light.bg-light .navbar-nav .nav-link,
 .navbar.navbar-light.bg-light .navbar-brand {
@@ -332,8 +333,8 @@ li {
   background-color: #485c317b !important;
   color: #ffffdd !important;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-bottom: 10em;
-  margin-top: 20em;
+  margin-bottom: 20em;
+  margin-top: 2em;
 }
 
 .card:hover {
@@ -452,7 +453,7 @@ section#welcome:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(110deg, #016a70, #a2c579);
+  background: linear-gradient(to right, #212121, #434343);
   border-radius: 0 0 50% 50% / 0 0 100% 100%;
   transform: scaleX(2);
 }
@@ -504,7 +505,7 @@ section#welcome:before {
   font-weight: 600;
   border: none;
   cursor: pointer;
-  background: linear-gradient(110deg, #016a70, #a2c579);
+  background: linear-gradient(to right, #212121, #434343);
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
@@ -516,7 +517,7 @@ section#welcome:before {
   bottom: 0;
   width: 100%;
   height: 5px;
-  background: linear-gradient(110deg, #016a70, #a2c579);
+  background: linear-gradient(to right, #212121, #434343);
   z-index: -1;
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -547,7 +548,7 @@ section#welcome:before {
 .footer {
   line-height: 1.5;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(110deg, #143d3f, #81a156);
+  background: linear-gradient(110deg, #140b15, #3a003a);
   padding: 20px 0;
 }
 
