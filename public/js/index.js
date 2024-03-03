@@ -18,7 +18,7 @@ function showLoader() {
   const loader = document.createElement("div");
   loader.className = "loader";
   loader.innerHTML = `
-    <span class="loader-text">EMOWELL</span>
+    <span class="loader-text">AptoEase</span>
     <span class="load"></span>
   `;
 
