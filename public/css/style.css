@@ -330,7 +330,8 @@ li {
 }
 /* cards section */
 .card {
-  background-color: #485c317b !important;
+  /* background-color: #0000004b !important; */
+  background: linear-gradient(110deg, #343434, #bcbcbc) !important;
   color: #ffffdd !important;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   margin-bottom: 20em;
