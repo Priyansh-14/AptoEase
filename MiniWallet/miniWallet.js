@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const { Web3 } = require('web3');
 
 const web3 = new Web3('https://ethereum-sepolia.publicnode.com');
@@ -14,9 +12,7 @@ async function sendTransaction() {
     console.log("Account From:", accountFrom);
 
     const wallet = web3.eth.accounts.wallet.add(accountFrom.privateKey);
-
-    console.log('Account 1:', wallet[0]);
-
+  
     const _to = accountTo.address;
     const _value = '0.001';
     
