@@ -60,6 +60,69 @@
       button:hover {
         background-color: #868c86;
       }
+      .button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 150px;
+        height: 40px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        border: 1px solid #34974d;
+        background-color: #3aa856;
+        border-radius: 8px;
+      }
+
+      .button,
+      .button__icon,
+      .button__text {
+        transition: all 0.3s;
+      }
+
+      .button .button__text {
+        transform: translateX(30px);
+        color: #fff;
+        font-weight: 600;
+      }
+
+      .button .button__icon {
+        position: absolute;
+        transform: translateX(109px);
+        height: 100%;
+        width: 39px;
+        background-color: #34974d;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+      }
+
+      .button .svg {
+        width: 30px;
+        stroke: #fff;
+      }
+
+      .button:hover {
+        background: #34974d;
+      }
+
+      .button:hover .button__text {
+        color: transparent;
+      }
+
+      .button:hover .button__icon {
+        width: 148px;
+        transform: translateX(0);
+      }
+
+      .button:active .button__icon {
+        background-color: #2e8644;
+      }
+
+      .button:active {
+        border: 1px solid #2e8644;
+      }
     </style>
   </head>
   <body>
@@ -75,6 +138,45 @@
     </form>
     <span class = "trans_hash"></span>
     <a href="https://sepolia.etherscan.io/">Enter the above Transaction_hash on this site to confirm your transaction</a>
+    <button type="button" class="button" onclick="backToHome()">
+      <span class="button__text">Back to</span>
+      <span class="button__icon"
+        ><svg
+          style="color: white"
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-house"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
+            fill="white"
+          ></path>
+          <path
+            fill-rule="evenodd"
+            d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"
+            fill="white"
+          ></path>
+        </svg>
+      </span>
+    </button>
+    <script>
+      function backToHome() {
+        window.location.href = "index.html";
+      }
+      const reveal = gsap.utils.toArray(".reveal");
+      reveal.forEach((text, i) => {
+        ScrollTrigger.create({
+          trigger: text,
+          toggleClass: "active",
+          start: "top 80%",
+          end: "top 10%",
+        });
+      });
+    </script>
     <script src="js/service1.js"></script>
   </body>
 </html>
