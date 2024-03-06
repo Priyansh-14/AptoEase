@@ -71,12 +71,16 @@
         placeholder="Type your message here..."
         required
       ></textarea>
-      <button type="submit">Submit</button>
+      <button type="submit" id="sbt">Submit</button>
     </form>
     <script>
-      const keyy=document.querySelector('#pvtkey');
-      console.log(keyy);
-      
+      const keyy = document.querySelector("#pvtkey");
+
+      const btn = document.querySelector("#sbt");
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log(keyy);
+      });
     </script>
   </body>
 </html>
