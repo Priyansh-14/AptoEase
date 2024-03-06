@@ -7,13 +7,28 @@
     <style>
       body {
         font-family: Arial, sans-serif;
-        background: linear-gradient(110deg, #140b15, #4a044a);
         margin: 0;
         padding: 0;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         height: 100vh;
+        color: #fff;
+        background: linear-gradient(110deg, #140b15, #4a044a);
+        animation: gradientAnimation 1ms infinite linear;
+      }
+
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
 
       form {
@@ -23,10 +38,13 @@
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         width: 300px;
+        margin-bottom: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
       }
+
       textarea:focus {
         border: none;
         outline: none;
@@ -60,10 +78,13 @@
       button:hover {
         background-color: #868c86;
       }
+
+      .trans_hash,
+      .trans_link {
+        margin-bottom: 20px;
+      }
+
       .button {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
         width: 150px;
         height: 40px;
         cursor: pointer;
@@ -123,11 +144,15 @@
       .button:active {
         border: 1px solid #2e8644;
       }
+      a{
+        text-decoration: none;
+        color: #fff;
+      }
     </style>
   </head>
   <body>
     <form class="form" id="tran_form" action="/api/transaction" method="POST">
-      <label for="message">Enter your private key here</label>
+      <label for="pvtkey">Enter your private key here</label>
       <textarea
         id="pvtkey"
         name="message"
@@ -136,9 +161,14 @@
       ></textarea>
       <button type="submit" id="sbt">Submit</button>
     </form>
-    <span class = "trans_hash"></span>
-    <a href="https://sepolia.etherscan.io/">Enter the above Transaction_hash on this site to confirm your transaction</a>
-    <button type="button" class="button" onclick="backToHome()">
+    <div class="trans_hash" id="trans_hash"></div>
+    <div class="trans_link">
+      <a href="https://sepolia.etherscan.io/"
+        >Enter the above Transaction_hash on this site to confirm your
+        transaction</a
+      >
+    </div>
+    <!-- <button type="button" class="button" onclick="backToHome()">
       <span class="button__text">Back to</span>
       <span class="button__icon"
         ><svg
@@ -162,8 +192,8 @@
           ></path>
         </svg>
       </span>
-    </button>
-    <script>
+    </button> -->
+    <!-- <script>
       function backToHome() {
         window.location.href = "index.html";
       }
@@ -176,7 +206,7 @@
           end: "top 10%",
         });
       });
-    </script>
+    </script> -->
     <script src="js/service1.js"></script>
   </body>
 </html>

@@ -18,7 +18,6 @@ form.addEventListener("submit", async function(e) {
     });
 
     if (!response.ok) {
-      // Handle error response
       const errorData = await response.json();
       throw new Error(`HTTP error! Status: ${response.status}, Message: ${errorData.error}`);
     }
@@ -26,12 +25,10 @@ form.addEventListener("submit", async function(e) {
     const result = await response.json();
     const transactionHash = result.receipt.transactionHash;
 
-    // Update the HTML to display the transaction hash
     const transactionHashSpan = document.querySelector(".trans_hash");
     transactionHashSpan.textContent = "Transaction Hash: " + transactionHash;
 
   } catch (error) {
     console.error("Error occurred:", error);
-    // Handle error
   }
 });
