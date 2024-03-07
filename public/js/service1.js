@@ -1,8 +1,12 @@
 const form = document.getElementById("tran_form");
 
 form.addEventListener("submit", async function(e) {
+  
   e.preventDefault();
- 
+  
+  const submitButton = form.querySelector("button[type='submit']");
+  submitButton.textContent = "Loading...";
+
   const key = document.querySelector("#pvtkey").value;
   console.log(key);
 
@@ -30,5 +34,9 @@ form.addEventListener("submit", async function(e) {
 
   } catch (error) {
     console.error("Error occurred:", error);
+  }
+  finally {
+    // Revert submit button text to its original text
+    submitButton.textContent = "Submit";
   }
 });

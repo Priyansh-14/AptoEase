@@ -15,7 +15,7 @@
         justify-content: center;
         height: 100vh;
         color: #fff;
-        background: linear-gradient(110deg, #140b15, #4a044a);
+        background: linear-gradient(-45deg, #140b15, #4a044a);
         animation: gradientAnimation 1ms infinite linear;
       }
 
@@ -55,10 +55,10 @@
         margin-bottom: 8px;
       }
 
-      textarea {
+      input {
         width: 100%;
-        height: 100px;
-        padding: 8px;
+        height: 50px;
+        /* padding: 8px; */
         box-sizing: border-box;
         margin-bottom: 16px;
         border: 1px solid #ccc;
@@ -67,16 +67,19 @@
       }
 
       button {
-        background-color: #212121;
+        background-color: #000000;
         color: #fff;
-        padding: 10px;
+        padding: 10px 25px;
         border: none;
         border-radius: 4px;
         cursor: pointer;
+        margin-top: 10px;
+        /* box-shadow: 5px 5px #454545; */
       }
 
       button:hover {
         background-color: #868c86;
+        box-shadow: 5px 5px #000000;
       }
 
       .trans_hash,
@@ -153,12 +156,7 @@
   <body>
     <form class="form" id="tran_form" action="/api/transaction" method="POST">
       <label for="pvtkey">Enter your private key here</label>
-      <textarea
-        id="pvtkey"
-        name="message"
-        placeholder="Type your private key here..."
-        required
-      ></textarea>
+      <input  id="pvtkey" type="password" name="password" required />
       <button type="submit" id="sbt">Submit</button>
     </form>
     <div class="trans_hash" id="trans_hash"></div>
@@ -192,8 +190,8 @@
           ></path>
         </svg>
       </span>
-    </button> -->
-    <!-- <script>
+    </button> 
+     <script>
       function backToHome() {
         window.location.href = "index.html";
       }
