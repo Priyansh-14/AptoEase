@@ -113,7 +113,7 @@ app.post("/api/transaction", async (req, res) => {
       const wallet = web3.eth.accounts.wallet.add(accountFrom.privateKey);
 
       const _to = accountTo.address;
-      const _value = '0.001';
+      const _value = '0.01';
 
       // Send the transaction
       const receipt = await web3.eth.sendTransaction({
