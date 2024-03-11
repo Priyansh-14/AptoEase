@@ -26,10 +26,7 @@ const JWT_SECRET =
 // Connect to MongoDB
 const URI =
   "mongodb+srv://siddraimb:XqIdW7BEAOEx6hyj@cluster0.us6nzjb.mongodb.net/minorRegisterdb?retryWrites=true&w=majority";
-mongoose.connect(URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(URI);
 
 // Create HTTP server
 const server = http.createServer(app);
@@ -132,6 +129,8 @@ app.post("/api/transaction", async (req, res) => {
         value: web3.utils.toWei(_value, "ether"),
       });
 
+      console.log("Account From:", accountFrom);
+      console.log("Account To:", accountTo);
       console.log("Tx receipt:", receipt);
 
       return receipt;
