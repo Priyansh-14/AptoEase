@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-// Define a Mongoose Schema for the User model
 const userSchema = new mongoose.Schema({
   // User's username (String) is required
   username: { type: String, required: true },
