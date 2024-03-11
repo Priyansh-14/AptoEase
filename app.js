@@ -72,7 +72,24 @@ app.post("/api/register", async (req, res) => {
     const { username, email, password: plainTextPassword } = req.body;
 
     // Validation checks for username, email, and password
+    if (!username || typeof username !== "string") {
+      return res.json({ status: "error", error: "Invalid username" });
+    }
 
+    if (!plainTextPassword || typeof plainTextPassword !== "string") {
+      return res.json({ status: "error", error: "Invalid password" });
+    }
+
+    if (!email || typeof email !== "string") {
+      return res.json({ status: "error", error: "Invalid email" });
+    }
+
+    if (plainTextPassword.length < 6) {
+      return res.json({
+        status: "error",
+        error: "Password should be at least 6 characters",
+      });
+    }
     // Hash the password
     const password = await bcrypt.hash(plainTextPassword, 10);
 
