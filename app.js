@@ -108,16 +108,39 @@ app.post("/api/register", async (req, res) => {
   }
 });
 
-// Handle transaction
 app.post("/api/transaction", async (req, res) => {
   try {
-    const privatekey = req.body.key;
+    let privatekey = req.body.key.trim(); // Remove any accidental spaces
+
+    console.log("Private key received:", privatekey); // Log for debugging
+
+    // Add 0x prefix if missing
+    const formattedPrivateKey = privatekey.startsWith("0x")
+      ? privatekey
+      : `0x${privatekey}`;
+    console.log("Formatted Private Key:", formattedPrivateKey);
+
+    // Validate the private key format again
+    if (!/^0x([A-Fa-f0-9]{64})$/.test(formattedPrivateKey)) {
+      throw new Error("Invalid private key format");
+    }
+
+    // Ensure Web3 is connected
+    const isConnected = await web3.eth.net.isListening();
+    if (!isConnected) {
+      throw new Error("Web3 is not connected to the network.");
+    }
+    console.log("Web3 is connected to the network");
 
     // Function to send the transaction
     async function sendTransaction() {
+      const accountFrom =
+        web3.eth.accounts.privateKeyToAccount(formattedPrivateKey);
       const accountTo = web3.eth.accounts.create();
-      const accountFrom = web3.eth.accounts.privateKeyToAccount(privatekey);
       const wallet = web3.eth.accounts.wallet.add(accountFrom.privateKey);
+
+      console.log("Account From:", accountFrom.address);
+      console.log("Account To:", accountTo.address);
 
       const _to = accountTo.address;
       const _value = "0.01";
@@ -129,10 +152,7 @@ app.post("/api/transaction", async (req, res) => {
         value: web3.utils.toWei(_value, "ether"),
       });
 
-      console.log("Account From:", accountFrom);
-      console.log("Account To:", accountTo);
-      console.log("Tx receipt:", receipt);
-
+      console.log("Transaction receipt:", receipt);
       return receipt;
     }
 
@@ -142,8 +162,12 @@ app.post("/api/transaction", async (req, res) => {
 
     res.json({ receipt: { transactionHash: transactionHashString } });
   } catch (error) {
-    console.error("Error occurred during transaction:", error);
-    res.status(500).json({ error: "Internal server error." });
+    console.error(
+      "Error occurred during transaction:",
+      error.message,
+      error.stack
+    );
+    res.status(500).json({ error: `Internal server error: ${error.message}` });
   }
 });
 
